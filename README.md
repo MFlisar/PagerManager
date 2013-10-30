@@ -1,9 +1,9 @@
-UniversalLoader
+PagerManager
 ===============
 
-simple, automatic handling of loading and caching data for a fragment
+simple, automatic handling of pages in a ViewPager together with a pager indicator... This library uses https://github.com/astuetz/PagerSlidingTabStrip
 
-**Screenshots**, **description** and **usage** can be found at http://www.michaelflisar.com/universal-loader/
+**Screenshots**, **description** and **usage** can be found at http://www.michaelflisar.com/pager-manager/
 
 License
 =======
