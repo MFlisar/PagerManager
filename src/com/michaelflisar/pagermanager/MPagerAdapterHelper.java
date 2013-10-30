@@ -4,12 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.util.SparseArray;
 
-public class ULPagerAdapterHelper<Frag extends Fragment & IPagerFragment>
+public class MPagerAdapterHelper<Frag extends Fragment & IPagerFragment>
 {
     private IPagerAdapterCallback<Frag> mCallback = null;
     private SparseArray<Frag> mPageFragments = new SparseArray<Frag>();
 
-    public ULPagerAdapterHelper(IPagerAdapterCallback<Frag> callback)
+    public MPagerAdapterHelper(IPagerAdapterCallback<Frag> callback)
     {
         mCallback = callback;
     }

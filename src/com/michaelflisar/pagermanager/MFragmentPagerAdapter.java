@@ -3,18 +3,18 @@ package com.michaelflisar.pagermanager;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class ULFragmentPagerStateAdapter<Frag extends Fragment & IPagerFragment> extends FragmentStatePagerAdapter implements IPagerAdapterCallback<Frag>
+public abstract class MFragmentPagerAdapter<Frag extends Fragment & IPagerFragment> extends FragmentPagerAdapter implements IPagerAdapterCallback<Frag>
 {
-    private ULPagerAdapterHelper<Frag> mHelper;
+    private MPagerAdapterHelper<Frag> mHelper;
 
-    public ULFragmentPagerStateAdapter(FragmentManager fm)
+    public MFragmentPagerAdapter(FragmentManager fm)
     {
         super(fm);
-        mHelper = new ULPagerAdapterHelper<Frag>(this);
+        mHelper = new MPagerAdapterHelper<Frag>(this);
     }
 
     @Override

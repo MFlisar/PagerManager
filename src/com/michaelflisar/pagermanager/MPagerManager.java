@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 
-public class ULPagerManager<Frag extends Fragment & IPagerFragment, Adapter extends PagerAdapter> implements OnPageChangeListener
+public class MPagerManager<Frag extends Fragment & IPagerFragment, Adapter extends PagerAdapter> implements OnPageChangeListener
 {
     public static interface OnPageSelectedCallback
     {
@@ -20,7 +20,7 @@ public class ULPagerManager<Frag extends Fragment & IPagerFragment, Adapter exte
     private Adapter UFragmentPagerAdapter = null;
     private OnPageSelectedCallback mOnPageSelectedCallback = null;
 
-    public ULPagerManager(ViewPager pager, PagerSlidingTabStrip indicator, Adapter fragmentPagerAdapter)
+    public MPagerManager(ViewPager pager, PagerSlidingTabStrip indicator, Adapter fragmentPagerAdapter)
     {
         updateViews(pager, indicator, fragmentPagerAdapter);
     }
