@@ -41,7 +41,7 @@ public class MPagerAdapterHelper<Frag extends Fragment & IPagerFragment>
         int pos = ((Frag) item).getPagerIndex();
         if (tryGetFragment(pos) != null)
             return pos;
-        // sonst neues Fragment liefern
+        // otherwise get a new fragment
         return PagerAdapter.POSITION_NONE;
     }
 

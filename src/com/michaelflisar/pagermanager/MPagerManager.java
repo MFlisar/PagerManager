@@ -17,7 +17,7 @@ public class MPagerManager<Frag extends Fragment & IPagerFragment, Adapter exten
 
     private ViewPager mViewPager = null;
     private PagerSlidingTabStrip mPageIndicator = null;
-    private Adapter UFragmentPagerAdapter = null;
+    private Adapter mFragmentPagerAdapter = null;
     private OnPageSelectedCallback mOnPageSelectedCallback = null;
 
     public MPagerManager(ViewPager pager, PagerSlidingTabStrip indicator, Adapter fragmentPagerAdapter)
@@ -27,7 +27,7 @@ public class MPagerManager<Frag extends Fragment & IPagerFragment, Adapter exten
 
     public void updateViews(ViewPager pager, PagerSlidingTabStrip indicator, Adapter fragmentPagerAdapter)
     {
-        UFragmentPagerAdapter = fragmentPagerAdapter;
+        mFragmentPagerAdapter = fragmentPagerAdapter;
         mViewPager = pager;
         mPageIndicator = indicator;
 
@@ -36,7 +36,7 @@ public class MPagerManager<Frag extends Fragment & IPagerFragment, Adapter exten
 
     private void doInit()
     {
-        mViewPager.setAdapter(UFragmentPagerAdapter);
+        mViewPager.setAdapter(mFragmentPagerAdapter);
         if (mPageIndicator != null)
         {
             mPageIndicator.setViewPager(mViewPager);
@@ -75,16 +75,16 @@ public class MPagerManager<Frag extends Fragment & IPagerFragment, Adapter exten
     {
         if (mPageIndicator != null)
             mPageIndicator.notifyDataSetChanged();
-        UFragmentPagerAdapter.notifyDataSetChanged();
+        mFragmentPagerAdapter.notifyDataSetChanged();
     }
 
     @SuppressWarnings("unchecked")
     public Frag getFragment(int pos)
     {
-        if (IPagerAdapterCallback.class.isAssignableFrom(UFragmentPagerAdapter.getClass()))
-            return ((IPagerAdapterCallback<Frag>) UFragmentPagerAdapter).tryGetFragment(pos);
+        if (IPagerAdapterCallback.class.isAssignableFrom(mFragmentPagerAdapter.getClass()))
+            return ((IPagerAdapterCallback<Frag>) mFragmentPagerAdapter).tryGetFragment(pos);
         else
-            throw new RuntimeException("Diese Funktion kann nur benutzt werden, wenn der Adapter UPagerAdapterHelperCallback implementiert!");
+            throw new RuntimeException("This function can only be used if the PagerAdapter implements IPagerAdapterCallback!");
     }
 
     public void setOnPageSelectedCallback(OnPageSelectedCallback callback)
