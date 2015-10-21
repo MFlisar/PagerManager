@@ -1,9 +1,9 @@
+DEPRECATED - Project no longer maintained
+
 PagerManager
 ===============
 
 simple, automatic handling of pages in a ViewPager together with a pager indicator... This library uses https://github.com/astuetz/PagerSlidingTabStrip
-
-**Screenshots**, **description** and **usage** can be found at http://www.michaelflisar.com/pager-manager/
 
 License
 =======
